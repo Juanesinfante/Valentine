@@ -1,0 +1,112 @@
+.main {
+    background-color: #cfbcbc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 2px solid #ea14aa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: none; /* Initially hidden */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.envelope {
+    width: 100px;
+    height: 60px;
+    background-color: #fff;
+    border: 2px solid #ea14aa;
+    border-radius: 5px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.envelope.open {
+    transform: rotateX(180deg); /* Open effect */
+}
+
+.btnNo, .btnSi {
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #ea14aa;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnNo::after, .btnNo::before,
+.btnSi::after, .btnSi::before {
+    content: "";
+    position: absolute;
+    transition: 0.5s;
+}
+
+.btnNo::after {
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #cfbcbc;
+}
+
+.btnNo::before {
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #cfbcbc;
+}
+
+.btnSi::after {
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #cfbcbc;
+}
+
+.btnSi::before {
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #cfbcbc;
+}
+
+button:hover::before, button:hover::after {
+    transform: scale(0);
+}
+
+button:hover {
+    box-shadow: inset 0px 0px 25px #ea14aa;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    gap: 1em; /* Space between buttons */
+}
